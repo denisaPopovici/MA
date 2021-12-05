@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MACrudUINative</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_word">Word…</string>
+    <string name="id">ID</string>
+    <string name="name">NAME</string>
+    <string name="price">PRICE</string>
+    <string name="producer">PRODUCER</string>
+    <string name="provider">PROVIDER</string>
+    <string name="quantity">QUANTITY</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Drug not saved because it is empty.</string>
+    <string name="add_word">Add word</string>
+    <string name="delete">DELETE</string>
+    <string name="update">UPDATE</string>
+    <string name="noAction">No action has been taken.</string>
+</resources>
