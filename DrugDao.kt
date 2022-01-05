@@ -14,6 +14,12 @@ interface DrugDao {
     @Query("SELECT * from drug_table")
     fun getDrugs(): LiveData<List<Drug>>
 
+    @Query("SELECT * from drug_table WHERE is_offline=1")
+    fun getOfflineData(): List<Drug>
+
+    @get:Query("select count(*) from drug_table")
+    val numberOfDrugs: Int
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(drug: Drug)
 
@@ -24,5 +30,6 @@ interface DrugDao {
     fun update(drug: Drug)
 
     @Query("DELETE FROM drug_table WHERE id=:given_id")
-    fun delete(given_id:String)
+    fun delete(given_id:Int)
+
 }

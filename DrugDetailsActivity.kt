@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -28,11 +29,13 @@ class DrugDetailsActivity : AppCompatActivity() {
         detailsQuantityView = findViewById(R.id.details_quantity)
 
         val id = intent.getStringExtra("ID")
+        Log.d("TAG", "ID: " + id.toString())
         val name = intent.getStringExtra("name")
         val price = intent.getStringExtra("price")
         val producer = intent.getStringExtra("producer")
         val provider = intent.getStringExtra("provider")
         val quantity = intent.getStringExtra("quantity")
+        val is_offline = intent.getStringExtra("is_offline")
 
         detailsNameView.setText(name)
         detailsPriceView.setText(price)
@@ -66,6 +69,7 @@ class DrugDetailsActivity : AppCompatActivity() {
                 replyIntent.putExtra("producer", newProducer)
                 replyIntent.putExtra("provider", newProvider)
                 replyIntent.putExtra("quantity", newQuantity)
+                replyIntent.putExtra("is_offline", is_offline)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
